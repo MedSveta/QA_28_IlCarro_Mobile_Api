@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static java.lang.System.getProperty;
+import static helper.PropertiesReader.getProperty;
 
 public class AppiumConfig {
     public static AppiumDriver<AndroidElement> driver;
@@ -33,24 +33,24 @@ public class AppiumConfig {
         desiredCapabilities.setCapability(MobileCapabilityType
                 .AUTOMATION_NAME, "Appium");
         //================================================
-        desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("deviceName", "Pixel");
-        desiredCapabilities.setCapability("platformVersion", "8.0");
-        desiredCapabilities.setCapability("appPackage", "com.telran.ilcarro");
-        desiredCapabilities.setCapability("appActivity", ".SplashActivity");
+//        desiredCapabilities.setCapability("platformName", "Android");
+//        desiredCapabilities.setCapability("deviceName", "Pixel");
+//        desiredCapabilities.setCapability("platformVersion", "8.0");
+//        desiredCapabilities.setCapability("appPackage", "com.telran.ilcarro");
+//        desiredCapabilities.setCapability("appActivity", ".SplashActivity");
 
         //==================================================
 
-//        desiredCapabilities.setCapability("platformName"
-//                , getProperty("mobile.properties", "platformName"));
-//        desiredCapabilities.setCapability("deviceName"
-//                , getProperty("mobile.properties", "deviceName"));
-//        desiredCapabilities.setCapability("platformVersion"
-//                , getProperty("mobile.properties", "platformVersion"));
-//        desiredCapabilities.setCapability("appPackage"
-//                , getProperty("mobile.properties", "appPackage"));
-//        desiredCapabilities.setCapability("appActivity"
-//                , getProperty("mobile.properties", "appActivity"));
+        desiredCapabilities.setCapability("platformName"
+                , getProperty("mobile.properties", "platformName"));
+        desiredCapabilities.setCapability("deviceName"
+                , getProperty("mobile.properties", "deviceName"));
+        desiredCapabilities.setCapability("platformVersion"
+                , getProperty("mobile.properties", "platformVersion"));
+        desiredCapabilities.setCapability("appPackage"
+                , getProperty("mobile.properties", "appPackage"));
+        desiredCapabilities.setCapability("appActivity"
+                , getProperty("mobile.properties", "appActivity"));
 
         String url = "http://localhost:4723/wd/hub";
         try {
