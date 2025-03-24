@@ -4,20 +4,21 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+//import java.util.logging.Logger;
 
 import static helper.PropertiesReader.getProperty;
 
 public class AppiumConfig {
     public static AppiumDriver<AndroidElement> driver;
 
-    //public Logger logger = LoggerFactory.getLogger(AppiumConfig.class);
+   // public Logger logger = Logger.getLogger(String.valueOf(driver));
 
     // "platformName": "Android",
 //         "deviceName": "Pixel",

@@ -19,7 +19,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.9'
     implementation 'io.appium:java-client:7.6.0'
     implementation 'io.rest-assured:rest-assured:4.5.1'
-
 }
 
 test {
