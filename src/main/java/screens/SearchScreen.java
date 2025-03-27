@@ -15,6 +15,12 @@ public class SearchScreen extends BaseScreen {
     AndroidElement btnDots;
     @FindBy(xpath = "//*[@text='Registration']")
     AndroidElement btnRegistration;
+    @FindBy(xpath = "//*[@text='Login']")
+    AndroidElement btnLogin;
+    @FindBy(xpath = "//*[@text='My Cars']")
+    AndroidElement btnMyCars;
+    @FindBy(xpath = "//*[@text='Logout']")
+    AndroidElement btnLogout;
     @FindBy(xpath = "//hierarchy/android.widget.Toast")
     AndroidElement popUpMessageSuccess;
 
@@ -30,5 +36,11 @@ public class SearchScreen extends BaseScreen {
             (String text){
         return textInElementPresent(popUpMessageSuccess
                 ,text, 3);
+    }
+    public void clickBtnLogin(){
+        clickWait(btnLogin, 3);
+    }
+    public void clickBtnMyCars(){
+        clickWait(btnMyCars, 3);
     }
 }
