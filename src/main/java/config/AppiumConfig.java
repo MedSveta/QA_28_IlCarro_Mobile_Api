@@ -17,6 +17,7 @@ import static helper.PropertiesReader.getProperty;
 
 public class AppiumConfig {
     public static AppiumDriver<AndroidElement> driver;
+    public static int height = 0, width = 0;
 
    // public Logger logger = Logger.getLogger(String.valueOf(driver));
 
@@ -59,6 +60,8 @@ public class AppiumConfig {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        height = driver.manage().window().getSize().getHeight();
+        width = driver.manage().window().getSize().getWidth();
     }
 
     @AfterMethod(alwaysRun = true)
