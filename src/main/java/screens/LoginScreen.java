@@ -22,7 +22,7 @@ public class LoginScreen extends BaseScreen{
     AndroidElement loginBtn;
 
     public void typeLoginForm(RegistrationBodyDto user){
-        loginEmail.sendKeys(user.getEmail());
+        loginEmail.sendKeys(user.getUsername());
         loginPassword.sendKeys(user.getPassword());
     }
     public void clickBtnLogin(){

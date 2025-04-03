@@ -33,7 +33,7 @@ public class RegistrationScreen extends BaseScreen {
     public void typeRegForm(RegistrationBodyDto user) {
         regName.sendKeys(user.getFirstName());
         regLastName.sendKeys(user.getLastName());
-        regEmail.sendKeys(user.getEmail());
+        regEmail.sendKeys(user.getUsername());
         regPassword.sendKeys(user.getPassword());
     }
     public void clickCheckBox(){

@@ -16,6 +16,8 @@ public class MyCarsScreen extends BaseScreen{
     AndroidElement addCarBtn;
     @FindBy(xpath = "/hierarchy/android.widget.Toast")
     AndroidElement popUpMessageSuccess;
+    @FindBy(xpath = "//*[@resource-id='android:id/button1']")
+    AndroidElement btnYes;
 
     public boolean textInElementPresent_popUpMessageSuccess(String text){
         return textInElementPresent(popUpMessageSuccess, text, 3);
@@ -24,10 +26,11 @@ public class MyCarsScreen extends BaseScreen{
     public void clickBtnAddNewCar(){
         clickWait(addCarBtn, 3);
     }
-    public void deleteCar(){
+    public void deleteFirstCar(){
         TouchAction<?> touchAction = new TouchAction<>(driver);
         touchAction.longPress(PointOption.point(width/10
                 , height/4)).moveTo(PointOption
                 .point(width/10*9,height/4 )).release().perform();
+        clickWait(btnYes, 3);
     }
 }

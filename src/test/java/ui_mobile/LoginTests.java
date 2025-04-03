@@ -22,7 +22,7 @@ public class LoginTests extends AppiumConfig {
     @Test
     public void loginPositiveTest(){
         RegistrationBodyDto user = RegistrationBodyDto.builder()
-                .email("sveta123656@gmail.com")
+                .username("sveta123656@gmail.com")
                 .password("AAaa1234!")
                 .build();
         LoginScreen loginScreen = new LoginScreen(driver);
@@ -34,7 +34,7 @@ public class LoginTests extends AppiumConfig {
     @Test
     public void loginNegativeTest_WrongPassword(){
         RegistrationBodyDto user = RegistrationBodyDto.builder()
-                .email("sveta123656@gmail.com")
+                .username("sveta123656@gmail.com")
                 .password("AAaa1234!111")
                 .build();
         LoginScreen loginScreen = new LoginScreen(driver);
@@ -46,7 +46,7 @@ public class LoginTests extends AppiumConfig {
     @Test
     public void loginNegativeTest_EmptyEmail(){
         RegistrationBodyDto user = RegistrationBodyDto.builder()
-                .email("")
+                .username("")
                 .password("AAaa1234!")
                 .build();
         LoginScreen loginScreen = new LoginScreen(driver);

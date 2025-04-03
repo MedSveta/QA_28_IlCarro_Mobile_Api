@@ -19,7 +19,7 @@ public class RegistrationTests extends AppiumConfig {
         RegistrationBodyDto user = RegistrationBodyDto.builder()
                 .firstName(i+"Georg")
                 .lastName(i+"Georgiev")
-                .email(i+"georg@mail.com")
+                .username(i+"georg@mail.com")
                 .password("Qwerty123!")
                 .build();
 
@@ -44,7 +44,7 @@ public class RegistrationTests extends AppiumConfig {
         RegistrationBodyDto user = RegistrationBodyDto.builder()
                 .firstName(i+"Georg")
                 .lastName(i+"Georgiev")
-                .email(i+"georg_mail.com")
+                .username(i+"georg_mail.com")
                 .password("Qwerty123!")
                 .build();
 
@@ -65,7 +65,7 @@ public class RegistrationTests extends AppiumConfig {
         RegistrationBodyDto user = RegistrationBodyDto.builder()
                 .firstName(i+"Georg")
                 .lastName(i+"Georgiev")
-                .email(i+"georg@mail.com")
+                .username(i+"georg@mail.com")
                 .password("Qwerty123!")
                 .build();
 
