@@ -36,7 +36,7 @@ public class AddNewCarTests extends AppiumConfig {
                 .manufacture("Tesla")
                 .model("XXX")
                 .city("Netanya")
-                .price(1.23)
+                .pricePerDay(1.23)
                 .carClass("A")
                 .fuel(Fuel.ELECTRIC.getFuel())
                 .year("2025")

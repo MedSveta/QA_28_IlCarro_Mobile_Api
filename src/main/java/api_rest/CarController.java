@@ -1,10 +1,13 @@
 package api_rest;
 
+import dto.CarDto;
 import dto.RegistrationBodyDto;
 import dto.TokenDto;
 import interfaces.BaseApi;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.testng.annotations.BeforeSuite;
+
 import static io.restassured.RestAssured.given;
 
 public class CarController implements BaseApi {
@@ -12,7 +15,7 @@ public class CarController implements BaseApi {
 
 
     @BeforeSuite
-    public void login(){
+    public void login() {
         RegistrationBodyDto user = RegistrationBodyDto.builder()
                 .username("frodo_baggins@gmail.com")
                 .password("Qwerty123!")
@@ -23,11 +26,38 @@ public class CarController implements BaseApi {
                 .body(user)
                 .contentType(ContentType.JSON)
                 .when()
-                .post(BASE_URL+LOGIN_URL)
+                .post(BASE_URL + LOGIN_URL)
                 .thenReturn()
                 .getBody()
                 .as(TokenDto.class);
         System.out.println(tokenDto.getAccessToken());
     }
 
+    public Response addNewCar(CarDto car) {
+        return given()
+                .body(car)
+                .contentType(ContentType.JSON)
+                .header("Authorization", tokenDto.getAccessToken())
+                .when()
+                .post(BASE_URL + ADD_NEW_CAR_URL)
+                .thenReturn();
+    }
+
+    public Response getUserCars() {
+        return given()
+                .contentType(ContentType.JSON)
+                .header("Authorization", tokenDto.getAccessToken())
+                .when()
+                .get(BASE_URL + GET_USER_CAR_URL)
+                .thenReturn();
+    }
+
+    public Response deleteCarById(String serialNumber) {
+        return given()
+                .contentType(ContentType.JSON)
+                .header("Authorization", tokenDto.getAccessToken())
+                .when()
+                .delete(BASE_URL + DELETE_CAR_URL + serialNumber)
+                .thenReturn();
+    }
 }

@@ -57,7 +57,7 @@ public class AddNewCarScreen extends BaseScreen {
         inputManufacture.sendKeys(car.getManufacture());
         inputModel.sendKeys(car.getModel());
         inputCity.sendKeys(car.getCity());
-        inputPrice.sendKeys(car.getPrice() + "");
+        inputPrice.sendKeys(car.getPricePerDay() + "");
         inputCarClass.sendKeys(car.getCarClass());
         System.out.println(height + "X" + width);
         TouchAction<?> touchAction = new TouchAction<>(driver);
